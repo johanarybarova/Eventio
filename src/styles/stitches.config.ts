@@ -189,7 +189,8 @@ const GlobalStyles = globalCss({
   },
 
   body: {
-    // add font
+    font: '400 1.6rem',
+    fontFamily: 'Hind',
     textRendering: 'optimizeLegibility',
     '-webkit-font-smoothing': 'antialiased',
     '-moz-osx-font-smoothing': 'grayscale',
