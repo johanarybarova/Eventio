@@ -89,7 +89,10 @@ export const {
       8: '8rem',
       9: '9rem',
     },
-    fonts: {},
+    fonts: {
+      base: 'Hind, sans-serif',
+      quotes: '"Playfair Display", serif',
+    },
     fontWeights: {},
     lineHeights: {
       1: '1rem',
@@ -190,7 +193,7 @@ const GlobalStyles = globalCss({
 
   body: {
     font: '400 1.6rem',
-    fontFamily: 'Hind',
+    fontFamily: '$base',
     textRendering: 'optimizeLegibility',
     '-webkit-font-smoothing': 'antialiased',
     '-moz-osx-font-smoothing': 'grayscale',
