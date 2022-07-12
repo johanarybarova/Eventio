@@ -220,6 +220,7 @@ const GlobalStyles = globalCss({
 
   h1: {
     fontSize: '$3',
+    fontWeight: '400',
     '@bp2': {
       fontSize: '4.5rem',
     },
@@ -227,6 +228,7 @@ const GlobalStyles = globalCss({
 
   h2: {
     fontSize: '2.4rem',
+    fontWeight: '400',
     '@bp2': {
       fontSize: '2.8rem',
     },
@@ -234,6 +236,7 @@ const GlobalStyles = globalCss({
 
   h3: {
     fontSize: '$2',
+    fontWeight: '400',
     '@bp2': {
       fontSize: '2.4rem',
     },
@@ -241,6 +244,7 @@ const GlobalStyles = globalCss({
 
   h4: {
     fontSize: '$l',
+    fontWeight: '400',
     '@bp2': {
       fontSize: '$l',
     },
