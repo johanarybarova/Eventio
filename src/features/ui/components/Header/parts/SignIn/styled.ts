@@ -3,6 +3,7 @@ import { styled } from '~/styles/stitches.config'
 export const Anchor = styled('a', {
   fontSize: '1.4rem',
   color: '$text$light',
+  textDecoration: 'none',
 
   b: {
     textTransform: 'uppercase',

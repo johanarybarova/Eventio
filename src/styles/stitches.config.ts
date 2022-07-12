@@ -182,7 +182,7 @@ export const {
 
 const GlobalStyles = globalCss({
   '*, *::before, *::after': { margin: '$n', boxSizing: 'border-box' },
-  'html, body': {
+  'html, body, #__next': {
     padding: '$n',
     height: '100%',
   },

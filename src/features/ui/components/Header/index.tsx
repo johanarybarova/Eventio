@@ -1,11 +1,15 @@
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 
-import { Logo } from './parts/Logo'
 import { SignIn } from './parts/SignIn'
+import { StyledHeader, StyledLogo } from './styled'
 
-export const Header: FC = () => (
-  <header>
-    <Logo />
-    <SignIn />
-  </header>
+type Props = {
+  actionComponent?: ReactNode
+}
+
+export const Header: FC<Props> = ({ actionComponent }) => (
+  <StyledHeader>
+    <StyledLogo />
+    {actionComponent ?? <SignIn />}
+  </StyledHeader>
 )
