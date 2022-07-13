@@ -251,6 +251,12 @@ const GlobalStyles = globalCss({
   },
 
   p: {
+    fontSize: '1.4rem',
+    color: '$text$dimmed',
+  },
+
+  time: {
+    fontSize: '1.4rem',
     color: '$text$dimmed',
   },
 
