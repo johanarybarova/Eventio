@@ -254,6 +254,10 @@ const GlobalStyles = globalCss({
     color: '$text$dimmed',
   },
 
+  form: {
+    marginTop: '4rem',
+  },
+
   footer: {
     display: 'flex',
     flex: '1',

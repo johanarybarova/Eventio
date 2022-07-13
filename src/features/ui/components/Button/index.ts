@@ -48,5 +48,17 @@ export const Button = styled('button', {
         $$backgroundColorHover: '$accent$attentionHover',
       },
     },
+    margin: {
+      small: {
+        marginTop: '$2',
+      },
+      medium: {
+        marginTop: '$4',
+      },
+    },
+  },
+
+  defualtProps: {
+    type: 'button',
   },
 })

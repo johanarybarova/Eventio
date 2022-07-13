@@ -29,16 +29,27 @@ export const LoginPage: NextPage = () => {
             <Description>Enter your details below.</Description>
           )}
           <form onSubmit={onSubmit}>
-            <Input label="Email" type="email" name="email" />
-            <Input label="Password" type="password" name="password" />
-            <Button accent="primary" size="medium" type="submit">
-              Sign In
-            </Button>
+            <Input label="Email" type="email" name="email" error={error} />
+            <Input
+              label="Password"
+              type="password"
+              name="password"
+              error={error}
+            />
+            <p>
+              <Button
+                accent="primary"
+                size="medium"
+                margin="medium"
+                type="submit"
+              >
+                Sign In
+              </Button>
+            </p>
 
             <p>
               <Button
-                css={{ margin: '$2' }}
-                type="button"
+                margin="small"
                 size="small"
                 accent="attention"
                 onClick={() => setError(Date.now().toString())}
