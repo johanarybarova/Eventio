@@ -1,5 +1,7 @@
 import type { FC } from 'react'
 
+import { List, ListItem, MobileLabel, FilterButton } from './styled'
+
 enum FilterType {
   ALL = 'ALL',
   FUTURE = 'FUTURE',
@@ -11,21 +13,32 @@ type Props = {
 }
 
 export const NavFilter: FC<Props> = ({ onChange }) => (
-  <ul>
-    <li>
-      <button type="button" onClick={() => onChange(FilterType.ALL)}>
-        All Events
-      </button>
-    </li>
-    <li>
-      <button type="button" onClick={() => onChange(FilterType.FUTURE)}>
-        Future Events
-      </button>
-    </li>
-    <li>
-      <button type="button" onClick={() => onChange(FilterType.PAST)}>
-        Past Events
-      </button>
-    </li>
-  </ul>
+  <>
+    <List>
+      <ListItem isActive>
+        <FilterButton type="button" onClick={() => onChange(FilterType.ALL)}>
+          All Events
+        </FilterButton>
+      </ListItem>
+      <ListItem>
+        <FilterButton type="button" onClick={() => onChange(FilterType.FUTURE)}>
+          Future Events
+        </FilterButton>
+      </ListItem>
+      <ListItem>
+        <FilterButton type="button" onClick={() => onChange(FilterType.PAST)}>
+          Past Events
+        </FilterButton>
+      </ListItem>
+    </List>
+
+    <MobileLabel>
+      <span>Show</span>
+      <select>
+        <option value={FilterType.ALL}>All Events</option>
+        <option value={FilterType.FUTURE}>Future Events</option>
+        <option value={FilterType.PAST}>Past Events</option>
+      </select>
+    </MobileLabel>
+  </>
 )

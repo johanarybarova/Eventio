@@ -264,6 +264,15 @@ const GlobalStyles = globalCss({
     marginTop: '4rem',
   },
 
+  button: {
+    padding: '0',
+    border: 'none',
+    font: 'inherit',
+    color: 'inherit',
+    background: 'none',
+    cursor: 'pointer',
+  },
+
   footer: {
     display: 'flex',
     flex: '1',
