@@ -14,10 +14,7 @@ export const CreateLink = styled('a', {
   margin: '3.2rem',
   borderRadius: '50%',
   color: '$text$inverted',
-  cursor: 'pointer',
   bg: '$background$dark',
-
   fontSize: '2rem',
-  textDecoration: 'none',
   paddingTop: '3px',
 })

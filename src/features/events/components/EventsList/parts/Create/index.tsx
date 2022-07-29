@@ -5,7 +5,7 @@ import { Routes } from '~/features/core/constants/routes'
 
 import { CreateLink } from './styled'
 
-export const CreateButton: FC = () => (
+export const CreateKnob: FC = () => (
   <Link href={Routes.CREATE_EVENT} passHref>
     <CreateLink aria-label="Create Event">+</CreateLink>
   </Link>

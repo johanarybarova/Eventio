@@ -1,8 +1,6 @@
 import { styled } from '~/styles/stitches.config'
 
-export const Title = styled('h3', {
-  color: '$text$base',
-})
+export const Title = styled('h3', {})
 
 export const Name = styled('p', {})
 

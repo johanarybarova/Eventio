@@ -8,7 +8,6 @@ export const Button = styled('button', {
   textTransform: 'uppercase',
   letterSpacing: '0.08em',
   borderRadius: '4px',
-  border: 'none',
   fontFamily: '$base',
   color: '$$textColor',
   transition: '$$backgroundColor 0.3s',

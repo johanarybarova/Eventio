@@ -214,11 +214,8 @@ const GlobalStyles = globalCss({
 }
 */
 
-  ul: {},
-
-  li: {},
-
   h1: {
+    color: '$text$base',
     fontSize: '$3',
     fontWeight: '400',
     '@bp2': {
@@ -227,6 +224,7 @@ const GlobalStyles = globalCss({
   },
 
   h2: {
+    color: '$text$base',
     fontSize: '2.4rem',
     fontWeight: '400',
     '@bp2': {
@@ -235,6 +233,7 @@ const GlobalStyles = globalCss({
   },
 
   h3: {
+    color: '$text$base',
     fontSize: '$2',
     fontWeight: '400',
     '@bp2': {
@@ -243,6 +242,7 @@ const GlobalStyles = globalCss({
   },
 
   h4: {
+    color: '$text$base',
     fontSize: '$l',
     fontWeight: '400',
     '@bp2': {
@@ -266,10 +266,23 @@ const GlobalStyles = globalCss({
 
   button: {
     padding: '0',
+    margin: '0',
     border: 'none',
     font: 'inherit',
     color: 'inherit',
     background: 'none',
+    cursor: 'pointer',
+  },
+
+  ul: {},
+
+  li: {
+    listStyle: 'none',
+  },
+
+  a: {
+    color: 'inherit',
+    textDecoration: 'none',
     cursor: 'pointer',
   },
 
@@ -280,15 +293,6 @@ const GlobalStyles = globalCss({
     borderTop: '1px solid #eaeaea',
     justifyContent: 'center',
     alignItems: 'center',
-
-    a: {
-      color: 'inherit',
-      textDecoration: 'none',
-    },
-
-    '&:focus': {
-      outline: 'none',
-    },
   },
 })
 

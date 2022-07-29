@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import { EventsList } from '~/features/events/components/EventsList'
 import { LayoutIn } from '~/features/ui/components/LayoutIn'
 
-import { CreateButton } from '../../components/EventsList/parts/CreateButton'
+import { CreateKnob } from '../../components/EventsList/parts/Create'
 
 export const DashboardPage: NextPage = () => (
   <LayoutIn>
@@ -11,7 +11,7 @@ export const DashboardPage: NextPage = () => (
     <section>
       <h2>Events List</h2>
       <EventsList />
-      <CreateButton />
+      <CreateKnob />
     </section>
   </LayoutIn>
 )
