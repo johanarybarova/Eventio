@@ -23,6 +23,7 @@ export const List = styled('ul', {
     isView: {
       true: {
         'grid-template-columns': 'repeat(auto-fit, minmax(30rem, 1fr))',
+
         '& article': {
           display: 'grid',
           'grid-template-columns': '1fr auto',
