@@ -11,7 +11,7 @@ type Props = {
 
 export const LayoutEx: FC<Props> = ({ children }) => (
   <Layout>
-    <Header />
+    <Header value="true" />
     <AsideCover />
     <Main>{children}</Main>
   </Layout>

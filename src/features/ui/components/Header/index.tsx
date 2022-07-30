@@ -5,10 +5,11 @@ import { StyledHeader, StyledLogo } from './styled'
 
 type Props = {
   actionComponent?: ReactNode
+  value?: true
 }
 
-export const Header: FC<Props> = ({ actionComponent }) => (
-  <StyledHeader>
+export const Header: FC<Props> = ({ actionComponent, value }) => (
+  <StyledHeader isAbsolute={value}>
     <StyledLogo />
     {actionComponent ?? <SignIn />}
   </StyledHeader>

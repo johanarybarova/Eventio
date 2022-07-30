@@ -11,6 +11,7 @@ export const Aside = styled('aside', {
     width: '30%',
     maxWidth: '48rem',
     minWidth: '30rem',
+    padding: '8rem clamp(2rem, 2.2vw, 4rem) 4rem',
     color: '$text$inverted',
     textAlign: 'center',
     bg: '$background$dark',
@@ -18,7 +19,7 @@ export const Aside = styled('aside', {
 })
 
 export const Figure = styled('figure', {
-  padding: '$8 clamp($2, 2.2vw, $4) $4',
+  // padding: '$8 clamp($2, 2.2vw, $4) $4',
 })
 
 export const Q = styled('q', {
