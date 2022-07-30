@@ -7,9 +7,6 @@ export const StyledLogo = styled(Logo, {
   textDecoration: 'none',
   fontSize: '2.8rem',
   lineHeight: '1',
-  '@bp2': {
-    color: '$text$inverted',
-  },
 })
 
 export const StyledHeader = styled('header', {
@@ -20,9 +17,20 @@ export const StyledHeader = styled('header', {
   width: '100%',
 
   '@bp2': {
-    position: 'absolute',
     padding: '$4',
-    top: '0',
-    left: '0',
+  },
+
+  variants: {
+    isAbsolute: {
+      true: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+
+        '& a:first-child': {
+          color: '$text$inverted',
+        },
+      },
+    },
   },
 })

@@ -11,7 +11,7 @@ type Props = {
 export const EventCard: FC<Props> = ({ isRow }) => (
   <Article isRow={Boolean(isRow)}>
     <time>July 4, 2022 – 5:20 PM</time>
-    <Title>How to stay calm when angry</Title>
+    <Title>How to stay calm</Title>
     <Name>John Watts</Name>
     <Description>
       I will show you how to stay calm when angry in a second

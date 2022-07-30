@@ -181,7 +181,11 @@ export const {
 })
 
 const GlobalStyles = globalCss({
-  '*, *::before, *::after': { margin: '$n', boxSizing: 'border-box' },
+  '*, *::before, *::after': {
+    padding: '$n',
+    margin: '$n',
+    boxSizing: 'border-box',
+  },
   'html, body, #__next': {
     padding: '$n',
     height: '100%',
@@ -237,7 +241,7 @@ const GlobalStyles = globalCss({
     fontSize: '$2',
     fontWeight: '400',
     '@bp2': {
-      fontSize: '2.4rem',
+      fontSize: '2.2rem',
     },
   },
 

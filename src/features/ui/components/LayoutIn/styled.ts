@@ -3,7 +3,7 @@ import { styled } from '~/styles/stitches.config'
 export const Layout = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  height: '100vh;',
+  height: 'auto',
   bg: '$background$dimmed',
 })
 

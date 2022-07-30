@@ -10,17 +10,14 @@ export const Description = styled('p', {
 })
 
 export const Count = styled('p', {
-  display: 'inline',
-  '& + button': {
-    float: 'right',
-  },
+  // display: 'inline',
 })
 
 export const Article = styled('article', {
   boxShadow: '0 2px 3px rgba(0, 0, 0, 0.1)',
   padding: '3.2rem',
   borderRadius: '2px',
-  bg: '$background$light',
+  bg: 'white',
 
   variants: {
     isRow: {

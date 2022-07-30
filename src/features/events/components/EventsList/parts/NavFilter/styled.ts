@@ -1,13 +1,8 @@
 import { styled } from '~/styles/stitches.config'
 
 export const List = styled('ul', {
-  display: 'none',
   padding: '0',
   listStyle: 'none',
-
-  '@bp2': {
-    display: 'block',
-  },
 })
 
 export const ListItem = styled('li', {
