@@ -4,6 +4,7 @@ export const Layout = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   height: 'auto',
+  'min-height': '100%',
   bg: '$background$dimmed',
 })
 
