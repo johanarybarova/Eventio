@@ -2,7 +2,8 @@ import { styled } from '~/styles/stitches.config'
 
 export const Layout = styled('div', {
   display: 'flex',
-  'flex-wrap': 'wrap',
+  'flex-direction': 'column',
+  'text-align': 'center',
   'min-height': '100%',
 
   '@bp2': {
@@ -16,7 +17,7 @@ export const Main = styled('main', {
   flexDirection: 'column',
   alignItems: 'center',
   flexGrow: '1',
-  padding: '8rem 2rem',
+  // padding: '8rem 2rem',
 
   '&::before, &::after': {
     content: `''`,

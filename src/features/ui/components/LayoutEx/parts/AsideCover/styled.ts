@@ -19,7 +19,7 @@ export const Aside = styled('aside', {
 })
 
 export const Figure = styled('figure', {
-  // padding: '$8 clamp($2, 2.2vw, $4) $4',
+  padding: '$18rem clamp(2rem, 2.2vw, 4rem) 4rem',
 })
 
 export const Q = styled('q', {
@@ -39,7 +39,7 @@ export const FigCap = styled('figcaption', {
 export const Hr = styled('hr', {
   width: '1.2rem',
   border: '$n',
-  borderTop: '2px solid',
+  borderTop: '2px solid currentColor',
   margin: '1.5rem auto',
   color: '$accent$primary',
 })
