@@ -72,8 +72,11 @@ export const Article = styled('article', {
           },
 
           '& h3': {
-            fontSize: '$l',
+            fontSize: '1.8rem',
             order: '-2',
+            '@bp2': {
+              fontSize: '1.8rem',
+            },
           },
 
           '& p:nth-child(4)': {

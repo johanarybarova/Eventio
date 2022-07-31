@@ -19,7 +19,12 @@ export const EventCard: FC<Props> = ({ isRow }) => (
     <Count>
       5 <span>of</span> 15
     </Count>
-    <Button accent="primary" size="small" type="button">
+    <Button
+      accent="primary"
+      size="small"
+      type="button"
+      css={{ justifySelf: 'end', flex: '0 0 auto', width: 'auto' }}
+    >
       Edit
     </Button>
   </Article>
