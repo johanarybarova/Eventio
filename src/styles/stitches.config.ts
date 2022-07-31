@@ -264,9 +264,7 @@ const GlobalStyles = globalCss({
     color: '$text$dimmed',
   },
 
-  form: {
-    marginTop: '4rem',
-  },
+  form: {},
 
   button: {
     padding: '0',

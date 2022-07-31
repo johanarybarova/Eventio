@@ -8,7 +8,7 @@ import { Anchor } from './styled'
 export const SignIn: FC = () => (
   <Link href={Routes.LOGIN}>
     <Anchor href=" ">
-      Already have an account? <b>sign in</b>
+      Already have an account?&ensp;<b>sign in</b>
     </Anchor>
   </Link>
 )

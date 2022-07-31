@@ -34,7 +34,7 @@ export const Button = styled('button', {
       },
       medium: {
         fontSize: '1.6rem',
-        padding: '0.8em 5.4em',
+        padding: '0.9em 5.4em 0.7em',
       },
     },
     accent: {

@@ -6,11 +6,12 @@ import { Layout, VerticalCenter } from './styled'
 
 type Props = {
   children: NonNullable<ReactNode>
+  headerActionComponent?: ReactNode
 }
 
-export const LayoutIn: FC<Props> = ({ children }) => (
+export const LayoutIn: FC<Props> = ({ children, headerActionComponent }) => (
   <Layout>
-    <Header />
-    <VerticalCenter>{children}</VerticalCenter>
+    <Header actionComponent={headerActionComponent} />
+    <VerticalCenter as="main">{children}</VerticalCenter>
   </Layout>
 )
