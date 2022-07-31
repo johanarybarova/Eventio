@@ -11,6 +11,10 @@ export const FormWrapper = styled('div', {
   width: '100%',
   maxWidth: '56rem',
   margin: '0 auto',
+
+  '> form': {
+    marginTop: '4rem',
+  },
 })
 
 export const Description = styled('p', {

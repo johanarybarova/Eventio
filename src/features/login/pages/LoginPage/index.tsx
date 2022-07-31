@@ -42,6 +42,7 @@ export const LoginPage: NextPage = () => {
                 size="medium"
                 margin="medium"
                 type="submit"
+                css={{ marginTop: '4rem' }}
               >
                 Sign In
               </Button>
@@ -49,7 +50,7 @@ export const LoginPage: NextPage = () => {
 
             <p>
               <Button
-                margin="small"
+                css={{ marginTop: '1rem' }}
                 size="small"
                 accent="attention"
                 onClick={() => setError(Date.now().toString())}
