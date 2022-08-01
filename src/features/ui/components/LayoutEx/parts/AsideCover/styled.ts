@@ -5,6 +5,7 @@ export const Aside = styled('aside', {
 
   '@bp2': {
     display: 'flex',
+    position: 'relative',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-end',

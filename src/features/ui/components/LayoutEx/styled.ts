@@ -13,6 +13,7 @@ export const Layout = styled('div', {
 })
 
 export const Main = styled('main', {
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

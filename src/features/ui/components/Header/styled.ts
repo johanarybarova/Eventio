@@ -15,6 +15,7 @@ export const StyledHeader = styled('header', {
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
+  zIndex: 100,
 
   '@bp2': {
     padding: '$4',
@@ -27,8 +28,10 @@ export const StyledHeader = styled('header', {
         top: 0,
         left: 0,
 
-        '& a:first-child': {
-          color: '$text$inverted',
+        '@bp2': {
+          '& a:first-child': {
+            color: '$text$inverted',
+          },
         },
       },
     },
