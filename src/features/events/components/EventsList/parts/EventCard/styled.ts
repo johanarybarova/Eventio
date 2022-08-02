@@ -1,3 +1,4 @@
+import { Button } from '~/features/ui/components/Button'
 import { styled } from '~/styles/stitches.config'
 
 export const Title = styled('h3', {})
@@ -9,15 +10,15 @@ export const Description = styled('p', {
   margin: '3.2rem 0 4rem',
 })
 
-export const Count = styled('p', {
-  // display: 'inline',
-})
+export const Count = styled('p', {})
+
+export const EditButton = styled(Button, {})
 
 export const Article = styled('article', {
   boxShadow: '0 2px 3px rgba(0, 0, 0, 0.1)',
   padding: '3.2rem',
   borderRadius: '2px',
-  bg: 'white',
+  bg: '$white',
 
   variants: {
     isRow: {
@@ -32,7 +33,6 @@ export const Article = styled('article', {
 
         '& p:nth-child(4)': {
           margin: '0',
-          // color: "red",
         },
 
         '@bp1': {
@@ -42,7 +42,6 @@ export const Article = styled('article', {
           '& h3, p:nth-child(4)': {
             'grid-column': '1 / 3',
             order: '-1',
-            // color: "red",
           },
 
           '> *:last-child': {
@@ -74,6 +73,7 @@ export const Article = styled('article', {
           '& h3': {
             fontSize: '1.8rem',
             order: '-2',
+
             '@bp2': {
               fontSize: '1.8rem',
             },
@@ -81,6 +81,12 @@ export const Article = styled('article', {
 
           '& p:nth-child(4)': {
             order: '-1',
+          },
+
+          '& button': {
+            justifySelf: 'end',
+            flex: '0 0 auto',
+            width: 'auto',
           },
 
           time: {

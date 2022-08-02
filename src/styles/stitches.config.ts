@@ -222,6 +222,7 @@ const GlobalStyles = globalCss({
     color: '$text$base',
     fontSize: '$3',
     fontWeight: '400',
+    lineHeight: '4.8rem',
     '@bp2': {
       fontSize: '4.5rem',
     },

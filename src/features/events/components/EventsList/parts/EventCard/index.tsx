@@ -1,8 +1,6 @@
 import type { FC } from 'react'
 
-import { Button } from '~/features/ui/components/Button'
-
-import { Article, Count, Description, Name, Title } from './styled'
+import { Article, Count, Description, Name, Title, EditButton } from './styled'
 
 type Props = {
   isRow: boolean
@@ -19,13 +17,8 @@ export const EventCard: FC<Props> = ({ isRow }) => (
     <Count>
       5 <span>of</span> 15
     </Count>
-    <Button
-      accent="primary"
-      size="small"
-      type="button"
-      css={{ justifySelf: 'end', flex: '0 0 auto', width: 'auto' }}
-    >
+    <EditButton type="button" accent="primary" size="small">
       Edit
-    </Button>
+    </EditButton>
   </Article>
 )

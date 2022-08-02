@@ -1,9 +1,6 @@
 import { styled } from '~/styles/stitches.config'
 
-export const List = styled('ul', {
-  padding: '0',
-  listStyle: 'none',
-})
+export const List = styled('ul', {})
 
 export const ListItem = styled('li', {
   display: 'inline-block',
@@ -21,6 +18,7 @@ export const ListItem = styled('li', {
 
 export const FilterButton = styled('button', {
   fontSize: '1.2rem',
+  fontWeight: '600',
   'text-transform': 'uppercase',
   'letter-spacing': '0.08em',
 })

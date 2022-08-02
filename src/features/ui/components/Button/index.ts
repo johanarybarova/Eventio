@@ -9,6 +9,7 @@ export const Button = styled('button', {
   letterSpacing: '0.08em',
   borderRadius: '4px',
   fontFamily: '$base',
+  fontWeight: '600',
   color: '$$textColor',
   transition: '$$backgroundColor 0.3s',
   bg: '$$backgroundColor',
@@ -57,7 +58,5 @@ export const Button = styled('button', {
     },
   },
 
-  defualtProps: {
-    type: 'button',
-  },
+  defualtProps: {},
 })

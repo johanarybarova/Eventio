@@ -19,6 +19,7 @@ export const FormWrapper = styled('div', {
 
 export const Description = styled('p', {
   fontSize: '1.8rem',
+  lineHeight: '2.4rem',
   margin: '0.5rem 0',
 })
 
