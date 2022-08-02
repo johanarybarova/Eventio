@@ -1,19 +1,23 @@
-import type { NextPage } from 'next'
 import Link from 'next/link'
+import type { FC, ReactNode } from 'react'
 
 import { Button } from '~/features/ui/components/Button'
 import { Container } from '~/features/ui/components/Container'
 import { LayoutEx } from '~/features/ui/components/LayoutEx'
 
 import { HeadImage } from './parts/HeadImage'
-import { Description, Title } from './styled'
+import { Description, H1 } from './styled'
 
-export const NotFoundPage: NextPage = () => (
+type Props = {
+  children: NonNullable<ReactNode>
+}
+
+export const PageDown: FC<Props> = ({ children }) => (
   <LayoutEx>
     <HeadImage />
     <div>
       <Container>
-        <Title>404 Error - page not found</Title>
+        <H1>{children}</H1>
         <Description>
           Seems like Darth Vader just hits our website and drops it down. Please
           press the refresh button and everything should be fine again.{' '}

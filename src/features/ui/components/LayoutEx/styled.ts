@@ -18,7 +18,6 @@ export const Main = styled('main', {
   flexDirection: 'column',
   alignItems: 'center',
   flexGrow: '1',
-  // padding: '8rem 2rem',
 
   '&::before, &::after': {
     content: `''`,

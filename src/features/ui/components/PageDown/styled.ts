@@ -1,6 +1,6 @@
 import { styled } from '~/styles/stitches.config'
 
-export const Title = styled('h1', {
+export const H1 = styled('h1', {
   fontSize: '2.4rem',
 
   '@bp2': {

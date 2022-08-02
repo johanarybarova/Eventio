@@ -25,7 +25,6 @@ export const FormWrapper = styled('div', {
 export const Title = styled('h1', {
   color: '$text$base',
   fontSize: '2.4rem',
-  fontWeight: '400',
 
   '@bp2': {
     fontSize: '2.8rem',
