@@ -208,16 +208,6 @@ const GlobalStyles = globalCss({
 
   nav: {},
 
-  /*
-&:not(input):focus-visible {
- 
-    "88" adds transparency channel to our existing theme color.
-    Applicable only to hex color notation.
-  
-    outline: 3px solid ${colors.accent.primary}88;
-}
-*/
-
   h1: {
     color: '$text$base',
     fontSize: '$3',
