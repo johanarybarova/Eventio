@@ -2,12 +2,7 @@ import { styled } from '~/styles/stitches.config'
 
 import { Logo } from './parts/Logo'
 
-export const StyledLogo = styled(Logo, {
-  color: '$black',
-  textDecoration: 'none',
-  fontSize: '2.8rem',
-  lineHeight: '1',
-})
+export const StyledLogo = styled(Logo, {})
 
 export const StyledHeader = styled('header', {
   display: 'flex',
