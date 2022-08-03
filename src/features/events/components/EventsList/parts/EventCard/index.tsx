@@ -1,14 +1,24 @@
 import type { FC } from 'react'
 
-export const EventCard: FC = () => (
-  <article>
+import { Article, Count, Description, Name, Title, EditButton } from './styled'
+
+type Props = {
+  isRow: boolean
+}
+
+export const EventCard: FC<Props> = ({ isRow }) => (
+  <Article isRow={Boolean(isRow)}>
     <time>July 4, 2022 – 5:20 PM</time>
-    <h3>How to stay calm when angry</h3>
-    <p>John Watts</p>
-    <p>I will show you how to stay calm when angry in a second</p>
-    <p>
+    <Title>How to stay calm</Title>
+    <Name>John Watts</Name>
+    <Description>
+      I will show you how to stay calm when angry in a second
+    </Description>
+    <Count>
       5 <span>of</span> 15
-    </p>
-    <button type="button">Edit</button>
-  </article>
+    </Count>
+    <EditButton type="button" accent="primary" size="small">
+      Edit
+    </EditButton>
+  </Article>
 )

@@ -3,10 +3,12 @@ import type { FC } from 'react'
 
 import { Routes } from '~/features/core/constants/routes'
 
+import { Anchor } from './styled'
+
 export const SignIn: FC = () => (
   <Link href={Routes.LOGIN}>
-    <a href=" ">
-      Already have an account? <b>sign in</b>
-    </a>
+    <Anchor href=" ">
+      Already have an account?&ensp;<b>sign in</b>
+    </Anchor>
   </Link>
 )
