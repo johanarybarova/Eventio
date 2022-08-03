@@ -279,6 +279,10 @@ const GlobalStyles = globalCss({
     cursor: 'pointer',
   },
 
+  q: {
+    quotes: "'“' '”'",
+  },
+
   footer: {
     display: 'flex',
     flex: '1',
