@@ -20,6 +20,7 @@ export const Aside = styled('aside', {
 })
 
 export const Figure = styled('figure', {
+  position: 'relative',
   padding: '$18rem clamp(2rem, 2.2vw, 4rem) 4rem',
 })
 
