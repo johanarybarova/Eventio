@@ -1,6 +1,15 @@
 import type { FC } from 'react'
 
-import { Article, Count, Description, Name, Title, EditButton } from './styled'
+import { UserIcon } from './parts/UserIcon'
+import {
+  Article,
+  CountWrapper,
+  Count,
+  Description,
+  Name,
+  Title,
+  EditButton,
+} from './styled'
 
 type Props = {
   isRow: boolean
@@ -14,9 +23,12 @@ export const EventCard: FC<Props> = ({ isRow }) => (
     <Description>
       I will show you how to stay calm when angry in a second
     </Description>
-    <Count>
-      5 <span>of</span> 15
-    </Count>
+    <CountWrapper>
+      <UserIcon />
+      <Count>
+        9 <span>of</span> 20
+      </Count>
+    </CountWrapper>
     <EditButton type="button" accent="primary" size="small">
       Edit
     </EditButton>
