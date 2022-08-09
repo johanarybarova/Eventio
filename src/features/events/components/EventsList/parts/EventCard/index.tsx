@@ -1,34 +1,29 @@
+import { format } from 'date-fns'
 import type { FC } from 'react'
 
-import { UserIcon } from './parts/UserIcon'
-import {
-  Article,
-  CountWrapper,
-  Count,
-  Description,
-  Name,
-  Title,
-  EditButton,
-} from './styled'
+import { Article, Count, Description, Name, Title, EditButton } from './styled'
+
+import type { Event } from '../../../../types'
 
 type Props = {
-  isRow: boolean
+  event: Event
+  isRow?: boolean
 }
 
-export const EventCard: FC<Props> = ({ isRow }) => (
+export const EventCard: FC<Props> = ({ event, isRow }) => (
   <Article isRow={Boolean(isRow)}>
-    <time>July 4, 2022 – 5:20 PM</time>
-    <Title>How to stay calm</Title>
-    <Name>John Watts</Name>
-    <Description>
-      I will show you how to stay calm when angry in a second
-    </Description>
-    <CountWrapper>
-      <UserIcon />
-      <Count>
-        9 <span>of</span> 20
-      </Count>
-    </CountWrapper>
+    <time>{format(new Date(event.startsAt), 'LLLL d, y – p')}</time>
+    <Title>{event.title}</Title>
+
+    <Name>
+      {event.owner.firstName} {event.owner.lastName}
+    </Name>
+
+    <Description>{event.description}</Description>
+
+    <Count>
+      {event.attendees.length} <span>of</span> {event.capacity}
+    </Count>
     <EditButton type="button" accent="primary" size="small">
       Edit
     </EditButton>
