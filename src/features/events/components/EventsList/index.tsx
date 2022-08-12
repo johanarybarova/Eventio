@@ -1,6 +1,7 @@
 import ky from 'ky'
 import type { FC } from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useQuery } from 'react-query'
 
 import { EventCard } from './parts/EventCard'
 import { NavFilter } from './parts/NavFilter'
@@ -10,24 +11,18 @@ import { ViewType } from './types'
 
 export const EventsList: FC = () => {
   const [view, setView] = useState<ViewType>(ViewType.GRID)
-  const [isLoading, setLoading] = useState(true)
-  const [events, setEvents] = useState([])
 
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    (async () => {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL
-      const apiKey = process.env.NEXT_PUBLIC_API_KEY
+  const { data, isLoading } = useQuery('queryevents', async () => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
-      const data = await ky
-        .get(`${apiUrl}events`, { headers: { APIKey: apiKey } })
-        .json()
+    const data = await ky
+      .get(`${apiUrl}events`, { headers: { APIKey: apiKey } })
+      .json()
 
-      setEvents(data)
-      setLoading(false)
-    })()
-  }, [])
-  
+    return data
+  })
+
   return (
     <>
       <Nav>
@@ -38,7 +33,7 @@ export const EventsList: FC = () => {
         <div> ...loading </div>
       ) : (
         <List isView={Boolean(view === ViewType.GRID)}>
-          {events.map((event) => (
+          {data.map((event) => (
             <li key={event.id}>
               <EventCard event={event} isRow={view === ViewType.LIST} />
             </li>
