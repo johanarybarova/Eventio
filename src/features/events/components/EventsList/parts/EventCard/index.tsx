@@ -1,7 +1,16 @@
 import { format } from 'date-fns'
 import type { FC } from 'react'
 
-import { Article, Count, Description, Name, Title, EditButton } from './styled'
+import { UserIcon } from './parts/UserIcon'
+import {
+  Article,
+  Count,
+  CountWrapper,
+  Description,
+  Name,
+  Title,
+  EditButton,
+} from './styled'
 
 import type { Event } from '../../../../types'
 
@@ -21,9 +30,13 @@ export const EventCard: FC<Props> = ({ event, isRow }) => (
 
     <Description>{event.description}</Description>
 
-    <Count>
-      {event.attendees.length} <span>of</span> {event.capacity}
-    </Count>
+    <CountWrapper>
+      <UserIcon />
+      <Count>
+        {event.attendees.length} <span>of</span> {event.capacity}
+      </Count>
+    </CountWrapper>
+
     <EditButton type="button" accent="primary" size="small">
       Edit
     </EditButton>

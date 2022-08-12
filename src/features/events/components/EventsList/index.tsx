@@ -10,12 +10,12 @@ import { ViewType } from './types'
 
 export const EventsList: FC = () => {
   const [view, setView] = useState<ViewType>(ViewType.GRID)
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true)
   const [events, setEvents] = useState([])
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    ;(async () => {
+    (async () => {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL
       const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
@@ -27,14 +27,14 @@ export const EventsList: FC = () => {
       setLoading(false)
     })()
   }, [])
-
+  
   return (
     <>
       <Nav>
         <NavFilter onChange={(filterType) => alert(filterType)} />
         <NavView activeView={view} onChange={setView} />
       </Nav>
-      {loading ? (
+      {isLoading ? (
         <div> ...loading </div>
       ) : (
         <List isView={Boolean(view === ViewType.GRID)}>
