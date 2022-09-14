@@ -1,5 +1,6 @@
 export enum Routes {
   DASHBOARD = '/',
-  LOGIN = '/login',
+  SIGN_IN = '/signin',
+  SIGN_UP = '/signup',
   CREATE_EVENT = '/events/create',
 }
