@@ -1,16 +1,15 @@
 import type { FC } from 'react'
-import { useState } from 'react'
 
 import { EventCard } from './parts/EventCard'
 import { NavFilter } from './parts/NavFilter'
 import { NavView } from './parts/NavView'
 import { List, Nav } from './styled'
-import { ViewType } from './types'
 
+import { useViewContext, ViewType } from '../../context/viewEvents'
 import { useEvents } from '../../hooks/useEvents'
 
 export const EventsList: FC = () => {
-  const [view, setView] = useState<ViewType>(ViewType.GRID)
+   const { view, setView } = useViewContext()
   const { data, isLoading } = useEvents()
   
   return (
