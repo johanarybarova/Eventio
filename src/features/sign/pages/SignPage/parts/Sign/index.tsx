@@ -5,7 +5,6 @@ import { Routes } from '~/features/core/constants/routes'
 
 import { Anchor } from './styled'
 
-
 type Props = {
   up?: Boolean
 }

@@ -11,6 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.8",
     "@stitches/react": "^1.2.8",
     "date-fns": "^2.29.1",
     "ky": "^0.31.1",
