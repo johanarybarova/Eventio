@@ -1,8 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import type { FC } from 'react'
 import { useForm } from "react-hook-form";
 
 import {
-  Description,
+ // Description,
   // ErrorMessage,
 } from "~/features/sign/pages/SignPage/styled";
 import { Button } from "~/features/ui/components/Button";
@@ -10,7 +11,13 @@ import { Input } from "~/features/ui/components/Input";
 
 import { schema } from "./schema";
 
-export const SignUpForm = () => {
+import { Sign } from "../Sign";
+
+type Props = {
+  isUp?: boolean
+}
+
+export const SignUpForm: FC<Props> = ({ isUp }) => {
   const {
     register,
     handleSubmit,
@@ -77,6 +84,7 @@ export const SignUpForm = () => {
           errors={errors.repeatPassword?.message}
           {...register("repeatPassword")}
         />
+        <Sign isDown isUp={isUp} />
         <p>
           <Button
             accent="primary"

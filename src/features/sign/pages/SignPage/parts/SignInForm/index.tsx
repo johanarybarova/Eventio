@@ -1,15 +1,23 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import type { FC } from "react";
 import { useForm } from "react-hook-form";
 
 import {
   Description,
- // ErrorMessage,
+  // ErrorMessage,
 } from "~/features/sign/pages/SignPage/styled";
 import { Button } from "~/features/ui/components/Button";
 import { Input } from "~/features/ui/components/Input";
 
 import { schema } from "./schema";
-export const SignInForm = () => {
+
+import { Sign } from "../Sign";
+
+type Props = {
+  isUp?: boolean;
+};
+
+export const SignInForm: FC<Props> = ({ isUp }) => {
   const {
     register,
     handleSubmit,
@@ -45,8 +53,19 @@ export const SignInForm = () => {
      */}
       <Description>Enter your details below.</Description>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="Email" type="text" errors={errors.email?.message} {...register("email")} />
-        <Input label="Password" type="password" errors={errors.password?.message} {...register("password")} />
+        <Input
+          label="Email"
+          type="text"
+          errors={errors.email?.message}
+          {...register("email")}
+        />
+        <Input
+          label="Password"
+          type="password"
+          errors={errors.password?.message}
+          {...register("password")}
+        />
+        <Sign isDown isUp={isUp} />
         <p>
           <Button
             accent="primary"

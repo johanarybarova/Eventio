@@ -6,16 +6,18 @@ import { Routes } from '~/features/core/constants/routes'
 import { Anchor } from './styled'
 
 type Props = {
-  up?: Boolean
+  isUp?: boolean,
+  isDown?: boolean,
+
 }
 
-export const Sign: FC<Props> = ({ up }) => {
+export const Sign: FC<Props> = ({ isUp, isDown }) => {
 
   let signlink = ''
   let textlink = ''
   let textlinksign = ''
 
-  if ( up === true ) {
+  if ( isUp === true ) {
     signlink = Routes.SIGN_IN
     textlink = 'Already have an account?'
     textlinksign = 'sign in'
@@ -27,7 +29,7 @@ export const Sign: FC<Props> = ({ up }) => {
 
   return (
     <Link href={signlink}>
-      <Anchor href={signlink}>
+      <Anchor isDown={isDown} href={signlink}>
         {textlink}&ensp;<b>{textlinksign}</b>
       </Anchor>
     </Link>

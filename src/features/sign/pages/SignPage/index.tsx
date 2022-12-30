@@ -12,18 +12,18 @@ import { FormWrapper, Title, } from "./styled";
 
 export const SignPage: NextPage = () => {
   const { pathname } = useRouter();
-  let up: Boolean = pathname === Routes.SIGN_UP;
+  let isUp: boolean = pathname === Routes.SIGN_UP;
 
   return (
-    <LayoutEx topRight={<Sign up={up} />}>
+    <LayoutEx topRight={<Sign isUp={isUp} />}>
       <Container>
         <FormWrapper>
           <Title>
-            {up === false
+            {isUp === false
               ? "Sign in to Eventio."
               : "Get started absolutely free."}
           </Title>
-          {up === true ? <SignUpForm /> : <SignInForm />}
+          {isUp === true ? <SignUpForm isUp={isUp}/> : <SignInForm isUp={isUp}/>}
         </FormWrapper>
       </Container>
     </LayoutEx>
