@@ -12,11 +12,13 @@ import {
   LabelText,
   PasswordToggle,
   StyledInput,
+  InputErrors,
 } from "./styled";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   error?: string;
+  errors?: string;
   name: string;
   type: string;
   register?: object;
@@ -24,7 +26,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input: FC<Props> = React.forwardRef(
   (
-    { label, name, type, error, register, ...rest },
+    { label, name, type, error, errors, register, ...rest },
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const [isPasswordShown, togglePassword] = useState(false);
@@ -37,6 +39,7 @@ export const Input: FC<Props> = React.forwardRef(
       <InputWrapper>
         <Label hasError={Boolean(error)} key={error}>
           <StyledInput
+            isError={Boolean(errors)}
             ref={ref}
             placeholder={label}
             name={name}
@@ -56,6 +59,7 @@ export const Input: FC<Props> = React.forwardRef(
             </PasswordToggle>
           )}
         </Label>
+       <InputErrors>{errors}</InputErrors>
       </InputWrapper>
     );
   },

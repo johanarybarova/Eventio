@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 import {
   Description,
-  ErrorMessage,
+  // ErrorMessage,
 } from "~/features/sign/pages/SignPage/styled";
 import { Button } from "~/features/ui/components/Button";
 import { Input } from "~/features/ui/components/Input";
@@ -32,7 +32,7 @@ export const SignUpForm = () => {
 
   return (
     <>
-      {errors.firstName || errors.lastName || errors.email || errors.password || errors.repeatPassword ? (
+      {/* errors.firstName || errors.lastName || errors.email || errors.password || errors.repeatPassword ? (
         <ErrorMessage>
           {errors?.firstName && <span role="alert">{errors.firstName.message}</span>}{" "}
           {errors?.lastName && <span role="alert">{errors.lastName.message}</span>}{" "}
@@ -42,18 +42,39 @@ export const SignUpForm = () => {
         </ErrorMessage>
       ) : (
         <Description>Enter your details below.</Description>
-      )}
+      ) */}
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="First name" type="text" {...register("firstName")} />
-        <Input label="Last name" type="text" {...register("lastName")} />
+        <Input
+          label="First name"
+          type="text"
+          errors={errors.firstName?.message}
+          {...register("firstName")}
+        />
+        <Input
+          label="Last name"
+          type="text"
+          errors={errors.lastName?.message}
+          {...register("lastName")}
+        />
 
-        <Input label="Email" type="text" {...register("email")} />
-        <Input label="Password" type="password" {...register("password")} />
+        <Input
+          label="Email"
+          type="text"
+          errors={errors.email?.message}
+          {...register("email")}
+        />
+        <Input
+          label="Password"
+          type="password"
+          errors={errors.password?.message}
+          {...register("password")}
+        />
 
         <Input
           label="Repeat password"
           type="password"
+          errors={errors.repeatPassword?.message}
           {...register("repeatPassword")}
         />
         <p>

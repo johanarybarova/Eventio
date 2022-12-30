@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 import {
   Description,
-  ErrorMessage,
+ // ErrorMessage,
 } from "~/features/sign/pages/SignPage/styled";
 import { Button } from "~/features/ui/components/Button";
 import { Input } from "~/features/ui/components/Input";
@@ -28,6 +28,7 @@ export const SignInForm = () => {
 
   return (
     <>
+      {/*
       {errors.email || errors?.password ? (
         <ErrorMessage>
           {" "}
@@ -41,9 +42,11 @@ export const SignInForm = () => {
       ) : (
         <Description>Enter your details below.</Description>
       )}
+     */}
+      <Description>Enter your details below.</Description>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="Email" type="text" {...register("email")} />
-        <Input label="Password" type="password" {...register("password")} />
+        <Input label="Email" type="text" errors={errors.email?.message} {...register("email")} />
+        <Input label="Password" type="password" errors={errors.password?.message} {...register("password")} />
         <p>
           <Button
             accent="primary"

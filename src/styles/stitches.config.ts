@@ -171,6 +171,9 @@ export const {
       paddingTop: value,
       paddingBottom: value,
     }),
+    pT: (value: Stitches.PropertyValue<'paddingTop' | 'paddingBottom'>) => ({
+      paddingTop: value,
+    }),
     bg: (value: Stitches.PropertyValue<'backgroundColor'>) => ({
       backgroundColor: value,
     }),
