@@ -14,6 +14,6 @@ export const schema = yup.object().shape({
     .max(30, "Password is too long."),
   repeatPassword: yup
     .string()
-    .oneOf([yup.ref("password"), "Passwords must match."])
+    .oneOf([yup.ref("password")], "Passwords must match.")
     .required("Must confirm password."),
 });
