@@ -11,13 +11,16 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.8",
     "@stitches/react": "^1.2.8",
     "date-fns": "^2.29.1",
     "ky": "^0.31.1",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-query": "3"
+    "react-hook-form": "^7.35.0",
+    "react-query": "3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",

@@ -13,7 +13,7 @@ type Props = {
 }
 
 export const PageDown: FC<Props> = ({ message }) => (
-  <LayoutEx>
+  <LayoutEx topRight>
     <HeadImage />
     <div>
       <Container>

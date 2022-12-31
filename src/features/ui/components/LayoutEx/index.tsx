@@ -7,11 +7,12 @@ import { Layout, Main } from './styled'
 
 type Props = {
   children: NonNullable<ReactNode>
+  topRight: ReactNode
 }
 
-export const LayoutEx: FC<Props> = ({ children }) => (
+export const LayoutEx: FC<Props> = ({ children, topRight }) => (
   <Layout>
-    <Header absolute />
+    <Header absolute topRightComponent={topRight} />
     <AsideCover />
     <Main>{children}</Main>
   </Layout>
