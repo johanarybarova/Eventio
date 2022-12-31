@@ -1,5 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import type { FC } from "react";
+import { signIn, getCsrfToken } from "next-auth/react";
+import type { FC, FormEventHandler } from "react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -17,7 +18,15 @@ type Props = {
   isUp?: boolean;
 };
 
-export const SignInForm: FC<Props> = ({ isUp }) => {
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      csrfToken: await getCsrfToken(context),
+    },
+  };
+}
+
+export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
   const {
     register,
     handleSubmit,
@@ -30,8 +39,13 @@ export const SignInForm: FC<Props> = ({ isUp }) => {
     },
   });
 
-  const onSubmit = (data?: object): void => {
-    console.log(data);
+  const onSubmit = async (data?: object) => {
+    const res = await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+    });
+
+    console.log(res);
   };
 
   return (
@@ -53,6 +67,7 @@ export const SignInForm: FC<Props> = ({ isUp }) => {
      */}
       <Description>Enter your details below.</Description>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
         <Input
           label="Email"
           type="text"

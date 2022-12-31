@@ -2,7 +2,7 @@ import { isAfter, isBefore } from 'date-fns'
 import { useMemo } from 'react'
 import { useQuery } from 'react-query'
 
-import { api } from '~/features/api/client'
+import { api } from '~/pages/api/client'
 
 import { FilterType } from '../context/filterEvents'
 import type { Event } from '../types'

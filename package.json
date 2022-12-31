@@ -16,6 +16,7 @@
     "date-fns": "^2.29.1",
     "ky": "^0.31.1",
     "next": "12.2.0",
+    "next-auth": "^4.18.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.35.0",
