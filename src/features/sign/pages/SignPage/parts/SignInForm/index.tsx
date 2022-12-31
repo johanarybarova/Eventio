@@ -1,6 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import type { GetServerSidePropsContext } from 'next';
 import { signIn, getCsrfToken } from "next-auth/react";
-import type { FC, FormEventHandler } from "react";
+import type { FC } from "react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -18,7 +19,7 @@ type Props = {
   isUp?: boolean;
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
       csrfToken: await getCsrfToken(context),
