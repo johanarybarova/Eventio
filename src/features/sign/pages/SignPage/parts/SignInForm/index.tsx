@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import type { GetServerSidePropsContext } from 'next';
+import type { GetServerSidePropsContext } from "next";
 import { signIn, getCsrfToken } from "next-auth/react";
 import type { FC } from "react";
 import { useForm } from "react-hook-form";
@@ -44,6 +44,7 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
+      redirect: false,
     });
 
     console.log(res);
