@@ -3,4 +3,5 @@ export enum Routes {
   SIGN_IN = '/signin',
   SIGN_UP = '/signup',
   CREATE_EVENT = '/events/create',
+  PROFILE = '/profile',
 }
