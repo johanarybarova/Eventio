@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 import {
   Description,
-  // ErrorMessage,
+  ErrorMessage,
 } from "~/features/sign/pages/SignPage/styled";
 import { Button } from "~/features/ui/components/Button";
 import { Input } from "~/features/ui/components/Input";
@@ -17,7 +17,13 @@ import { Sign } from "../Sign";
 
 type Props = {
   isUp?: boolean;
+  csrfToken: string;
 };
+
+interface Data {
+  password: string;
+  email: string;
+}
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
@@ -40,34 +46,26 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
     },
   });
 
-  const onSubmit = async (data?: object) => {
+  let error = "";
+
+  const onSubmit = async (data: Data) => {
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
       redirect: false,
     });
-
-    console.log(res);
+    console.table(res);
   };
 
   return (
     <>
-      {/*
-      {errors.email || errors?.password ? (
+      {errors.password ? (
         <ErrorMessage>
-          {" "}
-          {errors?.email && (
-            <span role="alert">{errors.email?.message}</span>
-          )}{" "}
-          {errors?.password && (
-            <span role="alert">{errors.password?.message}</span>
-          )}
+          Oops! That email and pasword combination is not valid.
         </ErrorMessage>
       ) : (
         <Description>Enter your details below.</Description>
       )}
-     */}
-      <Description>Enter your details below.</Description>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
         <Input
@@ -83,6 +81,7 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
           {...register("password")}
         />
         <Sign isDown isUp={isUp} />
+        <div>{error}</div>
         <p>
           <Button
             accent="primary"
