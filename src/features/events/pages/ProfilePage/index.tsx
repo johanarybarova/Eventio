@@ -7,7 +7,7 @@ import { Container } from "~/features/ui/components/Container";
 import { LayoutIn } from "~/features/ui/components/LayoutIn";
 import { ScreenReaderOnly } from "~/features/ui/components/ScreenReaderOnly";
 
-import { ProfileCard, ProfileCircle } from "./styled";
+import { ProfileCard, ProfileCircle, ProfileName } from "./styled";
 
 export const DashboardPage: NextPage = () => {
   const { pathname } = useRouter();
@@ -18,8 +18,15 @@ export const DashboardPage: NextPage = () => {
       <Container>
         <h1 className={ScreenReaderOnly()}>Profile</h1>
         <section>
-          <ProfileCircle />
-          <ProfileCard />
+          <ProfileCircle>
+            <p>
+              <abbr title="">TW</abbr>
+            </p>
+          </ProfileCircle>
+          <ProfileCard>
+            <ProfileName>Tom Watts</ProfileName>
+            <p>tomwatts@strv.com</p>
+          </ProfileCard>
           <EventsList isProfile={isProfile} />
         </section>
       </Container>
