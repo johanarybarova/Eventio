@@ -1,6 +1,9 @@
 import ky from "ky";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import type { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import CredentialProvider from "next-auth/providers/credentials";
+
+import type { User } from "~/features/events/types";
 
 const authOptions: NextAuthOptions = {
   session: {
@@ -10,8 +13,9 @@ const authOptions: NextAuthOptions = {
     CredentialProvider({
       type: "credentials",
       credentials: {},
+  
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      async authorize(credentials, req) {
+      async authorize(credentials, _req) {
         const { email, password } = credentials as {
           email: string;
           password: string;
@@ -44,7 +48,7 @@ const authOptions: NextAuthOptions = {
         }
 
         // If the request was successful, return the user object
-        const user = await response.json();
+        const user: User = await response.json();
         console.log(user);
         return user;
       },
