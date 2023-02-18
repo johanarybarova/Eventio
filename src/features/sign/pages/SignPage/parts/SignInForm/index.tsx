@@ -1,28 +1,28 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import type { GetServerSidePropsContext } from "next";
-import { signIn, getCsrfToken } from "next-auth/react";
-import type { FC } from "react";
-import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import type { GetServerSidePropsContext } from 'next'
+import { signIn, getCsrfToken } from 'next-auth/react'
+import type { FC } from 'react'
+import { useForm } from 'react-hook-form'
 
 import {
   Description,
   ErrorMessage,
-} from "~/features/sign/pages/SignPage/styled";
-import { Button } from "~/features/ui/components/Button";
-import { Input } from "~/features/ui/components/Input";
+} from '~/features/sign/pages/SignPage/styled'
+import { Button } from '~/features/ui/components/Button'
+import { Input } from '~/features/ui/components/Input'
 
-import { schema } from "./schema";
+import { schema } from './schema'
 
-import { Sign } from "../Sign";
+import { Sign } from '../Sign'
 
 type Props = {
-  isUp?: boolean;
-  csrfToken: string;
-};
+  isUp?: boolean
+  csrfToken: string
+}
 
 interface Data {
-  password: string;
-  email: string;
+  password: string
+  email: string
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -30,7 +30,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: {
       csrfToken: await getCsrfToken(context),
     },
-  };
+  }
 }
 
 export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
@@ -41,21 +41,21 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
-  });
+  })
 
-  let error = "";
+  let error = ''
 
   const onSubmit = async (data: Data) => {
-    const res = await signIn("credentials", {
+    const res = await signIn('credentials', {
       email: data.email,
       password: data.password,
       redirect: false,
-    });
-    console.table(res);
-  };
+    })
+    console.table(res)
+  }
 
   return (
     <>
@@ -72,13 +72,13 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
           label="Email"
           type="text"
           errors={errors.email?.message}
-          {...register("email")}
+          {...register('email')}
         />
         <Input
           label="Password"
           type="password"
           errors={errors.password?.message}
-          {...register("password")}
+          {...register('password')}
         />
         <Sign isDown isUp={isUp} />
         <div>{error}</div>
@@ -88,12 +88,12 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
             size="medium"
             margin="medium"
             type="submit"
-            css={{ marginTop: "4rem" }}
+            css={{ marginTop: '4rem' }}
           >
             Sign in
           </Button>
         </p>
       </form>
     </>
-  );
-};
+  )
+}

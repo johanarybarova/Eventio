@@ -1,17 +1,16 @@
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from '@hookform/resolvers/yup'
 import type { FC } from 'react'
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form'
 
-import {
- // Description,
-  // ErrorMessage,
-} from "~/features/sign/pages/SignPage/styled";
-import { Button } from "~/features/ui/components/Button";
-import { Input } from "~/features/ui/components/Input";
+import // Description,
+// ErrorMessage,
+'~/features/sign/pages/SignPage/styled'
+import { Button } from '~/features/ui/components/Button'
+import { Input } from '~/features/ui/components/Input'
 
-import { schema } from "./schema";
+import { schema } from './schema'
 
-import { Sign } from "../Sign";
+import { Sign } from '../Sign'
 
 type Props = {
   isUp?: boolean
@@ -25,17 +24,17 @@ export const SignUpForm: FC<Props> = ({ isUp }) => {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      email: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      repeatPassword: "",
+      email: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      repeatPassword: '',
     },
-  });
+  })
 
   const onSubmit = (data?: object): void => {
-    console.log(data);
-  };
+    console.log(data)
+  }
 
   return (
     <>
@@ -56,33 +55,33 @@ export const SignUpForm: FC<Props> = ({ isUp }) => {
           label="First name"
           type="text"
           errors={errors.firstName?.message}
-          {...register("firstName")}
+          {...register('firstName')}
         />
         <Input
           label="Last name"
           type="text"
           errors={errors.lastName?.message}
-          {...register("lastName")}
+          {...register('lastName')}
         />
 
         <Input
           label="Email"
           type="text"
           errors={errors.email?.message}
-          {...register("email")}
+          {...register('email')}
         />
         <Input
           label="Password"
           type="password"
           errors={errors.password?.message}
-          {...register("password")}
+          {...register('password')}
         />
 
         <Input
           label="Repeat password"
           type="password"
           errors={errors.repeatPassword?.message}
-          {...register("repeatPassword")}
+          {...register('repeatPassword')}
         />
         <Sign isDown isUp={isUp} />
         <p>
@@ -91,12 +90,12 @@ export const SignUpForm: FC<Props> = ({ isUp }) => {
             size="medium"
             margin="medium"
             type="submit"
-            css={{ marginTop: "4rem" }}
+            css={{ marginTop: '4rem' }}
           >
             Sign up
           </Button>
         </p>
       </form>
     </>
-  );
-};
+  )
+}

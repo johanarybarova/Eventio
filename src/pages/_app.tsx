@@ -6,7 +6,7 @@ import { HeadDefault } from '~/features/core/components/HeadDefault'
 import { FilterContextProvider } from '~/features/events/context/filterEvents'
 import { ViewContextProvider } from '~/features/events/context/viewEvents'
 
- const queryClient = new QueryClient()
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
