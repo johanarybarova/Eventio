@@ -99,3 +99,7 @@ export const SignUpForm: FC<Props> = ({ isUp }) => {
     </>
   )
 }
+
+SignUpForm.defaultProps = {
+  isUp: true,
+}

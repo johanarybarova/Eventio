@@ -17,7 +17,7 @@ import { Sign } from '../Sign'
 
 type Props = {
   isUp?: boolean
-  csrfToken: string
+  csrfToken?: string
 }
 
 interface Data {
@@ -96,4 +96,9 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
       </form>
     </>
   )
+}
+
+SignInForm.defaultProps = {
+  csrfToken: '',
+  isUp: true,
 }
