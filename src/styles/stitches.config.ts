@@ -63,6 +63,7 @@ export const {
       s: '0.25rem',
       m: '0.5rem',
       l: '0.75rem',
+      xl: '0.8rem',
       1: '1rem',
       2: '2rem',
       3: '3rem',

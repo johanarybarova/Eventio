@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import type { GetServerSidePropsContext } from 'next'
-import { signIn, getCsrfToken } from 'next-auth/react'
+import { signIn, getCsrfToken, useSession } from 'next-auth/react'
 import type { FC } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -34,6 +34,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 }
 
 export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
+  const { data: session } = useSession()
   const {
     register,
     handleSubmit,
@@ -64,7 +65,9 @@ export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
           Oops! That email and pasword combination is not valid.
         </ErrorMessage>
       ) : (
-        <Description>Enter your details below.</Description>
+        <Description>
+          Enter your details below. {session?.user?.email}
+        </Description>
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />

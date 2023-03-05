@@ -9,11 +9,12 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },
+
   providers: [
     CredentialProvider({
       type: 'credentials',
       credentials: {},
-      
+
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       async authorize(credentials, _req) {
         const { email, password } = credentials as {
@@ -34,7 +35,7 @@ const authOptions: NextAuthOptions = {
           }
 
           const user: User = await response.json()
-          console.log(user)
+         // console.log(user)
           return user
         } catch (error) {
           console.log(error)
@@ -43,6 +44,7 @@ const authOptions: NextAuthOptions = {
       },
     }),
   ],
+
   pages: {
     signIn: '/',
   },
