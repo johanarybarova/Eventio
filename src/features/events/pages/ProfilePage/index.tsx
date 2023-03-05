@@ -1,17 +1,17 @@
-import type { NextPage } from "next";
-import { useRouter } from "next/router";
+import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 
-import { Routes } from "~/features/core/constants/routes";
-import { EventsList } from "~/features/events/components/EventsList";
-import { Container } from "~/features/ui/components/Container";
-import { LayoutIn } from "~/features/ui/components/LayoutIn";
-import { ScreenReaderOnly } from "~/features/ui/components/ScreenReaderOnly";
+import { Routes } from '~/features/core/constants/routes'
+import { EventsList } from '~/features/events/components/EventsList'
+import { Container } from '~/features/ui/components/Container'
+import { LayoutIn } from '~/features/ui/components/LayoutIn'
+import { ScreenReaderOnly } from '~/features/ui/components/ScreenReaderOnly'
 
-import { ProfileCard, ProfileCircle, ProfileName } from "./styled";
+import { ProfileCard, ProfileCircle, ProfileName } from './styled'
 
 export const DashboardPage: NextPage = () => {
-  const { pathname } = useRouter();
-  let isProfile: boolean = pathname === Routes.PROFILE;
+  const { pathname } = useRouter()
+  let isProfile: boolean = pathname === Routes.PROFILE
 
   return (
     <LayoutIn>
@@ -31,5 +31,5 @@ export const DashboardPage: NextPage = () => {
         </section>
       </Container>
     </LayoutIn>
-  );
-};
+  )
+}

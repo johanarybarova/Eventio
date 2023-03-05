@@ -15,7 +15,7 @@ type ContextValue = {
 export const ViewContext = createContext<ContextValue>({
   view: ViewType.GRID,
   setView: () => {
-    ;('')
+    ('')
   },
 })
 

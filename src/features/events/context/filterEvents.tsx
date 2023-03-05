@@ -16,7 +16,7 @@ type ContextValue = {
 export const FilterContext = createContext<ContextValue>({
   filter: FilterType.ALL,
   setFilter: () => {
-    ;('')
+    ('')
   },
 })
 

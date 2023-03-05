@@ -9,11 +9,8 @@ import { ScreenReaderOnly } from '~/features/ui/components/ScreenReaderOnly'
 import { CreateKnob } from '../../components/EventsList/parts/CreateKnob'
 
 export const DashboardPage: NextPage = () => {
-
   return (
-    <LayoutIn
-      headerActionComponent={<SignedInUser />}
-    >
+    <LayoutIn headerActionComponent={<SignedInUser />}>
       <Container>
         <h1 className={ScreenReaderOnly()}>Dashboard</h1>
         <section>

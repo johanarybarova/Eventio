@@ -1,25 +1,25 @@
-import type { FC } from "react";
+import type { FC } from 'react'
 
-import { EventCard } from "./parts/EventCard";
-import { NavFilter } from "./parts/NavFilter";
-import { NavView } from "./parts/NavView";
-import { List, Nav } from "./styled";
+import { EventCard } from './parts/EventCard'
+import { NavFilter } from './parts/NavFilter'
+import { NavView } from './parts/NavView'
+import { List, Nav } from './styled'
 
-import { useFilterContext } from "../../context/filterEvents";
-import { useViewContext, ViewType } from "../../context/viewEvents";
-import { useEvents } from "../../hooks/useEvents";
+import { useFilterContext } from '../../context/filterEvents'
+import { useViewContext, ViewType } from '../../context/viewEvents'
+import { useEvents } from '../../hooks/useEvents'
 
 type Props = {
-  isProfile?: boolean;
-};
+  isProfile?: boolean
+}
 
 export const EventsList: FC<Props> = ({ isProfile }) => {
-  const { filter, setFilter } = useFilterContext();
-  const { view, setView } = useViewContext();
-  const { events, isLoading, error } = useEvents(filter);
+  const { filter, setFilter } = useFilterContext()
+  const { view, setView } = useViewContext()
+  const { events, isLoading, error } = useEvents(filter)
 
   if (error) {
-    throw error;
+    throw error
   }
 
   return (
@@ -44,5 +44,5 @@ export const EventsList: FC<Props> = ({ isProfile }) => {
         </List>
       )}
     </>
-  );
-};
+  )
+}
