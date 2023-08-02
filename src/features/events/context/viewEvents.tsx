@@ -14,7 +14,9 @@ type ContextValue = {
 
 export const ViewContext = createContext<ContextValue>({
   view: ViewType.GRID,
-  setView: () => {""},
+  setView: () => {
+    ('')
+  },
 })
 
 export const ViewContextProvider: FC<{ children: ReactNode }> = ({
@@ -30,11 +32,7 @@ export const ViewContextProvider: FC<{ children: ReactNode }> = ({
     [view]
   )
 
-  return (
-    <ViewContext.Provider value={value}>
-      {children}
-    </ViewContext.Provider>
-  )
+  return <ViewContext.Provider value={value}>{children}</ViewContext.Provider>
 }
 
 export const useViewContext = () => {

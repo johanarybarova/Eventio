@@ -17,9 +17,7 @@ const MyDocument = () => {
           href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=Playfair+Display&display=swap"
           rel="stylesheet"
         />
-        <style
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
+        <style dangerouslySetInnerHTML={{ __html: getCssText() }} />
       </Head>
       <body>
         <Main />

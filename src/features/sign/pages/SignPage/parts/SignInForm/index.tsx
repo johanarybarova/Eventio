@@ -1,23 +1,40 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import type { FC } from "react";
-import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import type { GetServerSidePropsContext } from 'next'
+import { signIn, getCsrfToken, useSession } from 'next-auth/react'
+import type { FC } from 'react'
+import { useForm } from 'react-hook-form'
 
 import {
   Description,
-  // ErrorMessage,
-} from "~/features/sign/pages/SignPage/styled";
-import { Button } from "~/features/ui/components/Button";
-import { Input } from "~/features/ui/components/Input";
+  ErrorMessage,
+} from '~/features/sign/pages/SignPage/styled'
+import { Button } from '~/features/ui/components/Button'
+import { Input } from '~/features/ui/components/Input'
 
-import { schema } from "./schema";
+import { schema } from './schema'
 
-import { Sign } from "../Sign";
+import { Sign } from '../Sign'
 
 type Props = {
-  isUp?: boolean;
-};
+  isUp?: boolean
+  csrfToken?: string
+}
 
-export const SignInForm: FC<Props> = ({ isUp }) => {
+interface Data {
+  password: string
+  email: string
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      csrfToken: await getCsrfToken(context),
+    },
+  }
+}
+
+export const SignInForm: FC<Props> = ({ isUp, csrfToken }) => {
+  const { data: session } = useSession()
   const {
     register,
     handleSubmit,
@@ -25,59 +42,66 @@ export const SignInForm: FC<Props> = ({ isUp }) => {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
-  });
+  })
 
-  const onSubmit = (data?: object): void => {
-    console.log(data);
-  };
+  let error = ''
+
+  const onSubmit = async (data: Data) => {
+    const res = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    })
+    console.table(res)
+  }
 
   return (
     <>
-      {/*
-      {errors.email || errors?.password ? (
+      {errors.password ? (
         <ErrorMessage>
-          {" "}
-          {errors?.email && (
-            <span role="alert">{errors.email?.message}</span>
-          )}{" "}
-          {errors?.password && (
-            <span role="alert">{errors.password?.message}</span>
-          )}
+          Oops! That email and pasword combination is not valid.
         </ErrorMessage>
       ) : (
-        <Description>Enter your details below.</Description>
+        <Description>
+          Enter your details below. {session?.user?.email}
+        </Description>
       )}
-     */}
-      <Description>Enter your details below.</Description>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
         <Input
           label="Email"
           type="text"
           errors={errors.email?.message}
-          {...register("email")}
+          {...register('email')}
         />
         <Input
           label="Password"
           type="password"
           errors={errors.password?.message}
-          {...register("password")}
+          {...register('password')}
         />
         <Sign isDown isUp={isUp} />
+        <div>{error}</div>
         <p>
           <Button
             accent="primary"
             size="medium"
             margin="medium"
             type="submit"
-            css={{ marginTop: "4rem" }}
+            css={{ marginTop: '4rem' }}
           >
             Sign in
           </Button>
         </p>
       </form>
     </>
-  );
-};
+  )
+}
+
+SignInForm.defaultProps = {
+  csrfToken: '',
+  isUp: true,
+}

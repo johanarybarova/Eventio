@@ -15,7 +15,9 @@ type ContextValue = {
 
 export const FilterContext = createContext<ContextValue>({
   filter: FilterType.ALL,
-  setFilter: () => {""},
+  setFilter: () => {
+    ('')
+  },
 })
 
 export const FilterContextProvider: FC<{ children: ReactNode }> = ({
@@ -32,9 +34,7 @@ export const FilterContextProvider: FC<{ children: ReactNode }> = ({
   )
 
   return (
-    <FilterContext.Provider value={value}>
-      {children}
-    </FilterContext.Provider>
+    <FilterContext.Provider value={value}>{children}</FilterContext.Provider>
   )
 }
 

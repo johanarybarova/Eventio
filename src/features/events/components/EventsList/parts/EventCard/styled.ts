@@ -29,6 +29,16 @@ export const Article = styled('article', {
 
   variants: {
     isRow: {
+      false: {
+        height: '32.2rem',
+        p: {
+          textOverflow: 'ellipsis',
+          overflow: 'hidden',
+          display: '-webkit-box',
+          '-webkit-line-clamp': '3',
+          '-webkit-box-orient': 'vertical',
+        },
+      },
       true: {
         padding: '2.4rem 1.6rem',
 
